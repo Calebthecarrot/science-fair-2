@@ -25,8 +25,8 @@ class MultiLabelPathClassifier(nn.Module):
         return self.fc2(x)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = path_classifier().to(device)
-model.load_state_dict(torch.load("path_classifier.pth", map_location=device))
+model = multi_label_path_classifier().to(device)
+model.load_state_dict(torch.load("multi_label_path_classifier.pth", map_location=device))
 model.eval()
 
 transform = transforms.Compose([
@@ -89,4 +89,5 @@ cap.release()
 if ser:
     ser.close()
 cv2.destroyAllWindows()
+
 
