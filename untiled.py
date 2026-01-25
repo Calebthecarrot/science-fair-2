@@ -135,6 +135,5 @@ for epoch in range(num_epochs):
 
     print(f"Validation Accuracy: {100 * correct / total:.2f}%")
 
-torch.save(model.state_dict(), "path_classifier.pth")
+torch.save(model.state_dict(), "multi_label_path_classifier.pth")
 print("Model saved as multi_label_path_classifier.pth")
-
